@@ -18,6 +18,18 @@
             <option value="txt">Text</option>
         </select>
 
+        <label for="employees">Total Chain Employees</label>
+        <input type="number" name="employees" min="1" max="100" value="5">
+        
+        <label for="salary">Salary Range</label>
+        <input type="number" name="salary" min="1" max="999999" value="5">
+
+        <label for="locationCount">Number Of Locations</label>
+        <input type="number" name="locationCount" min="1" max="999999" value="5">
+
+        <label for="postNumberRange">Post Number Range</label>
+        <input type="number" name="postNumberRange" min="11111" max="99999" value="5">
+
         <button type="submit">Generate</button>
     </form>
 </body>

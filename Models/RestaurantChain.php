@@ -29,7 +29,7 @@ class RestaurantChain extends Company
     {
         $locationList = "";
         foreach($this->restaurantLocation as $restaurantLocation){
-                $locationList .= $restaurantLocation->toHTML();
+            $locationList .= $restaurantLocation->toHTML();
         }
 
         return sprintf("
@@ -38,6 +38,19 @@ class RestaurantChain extends Company
             </div>
             %s
         ",
+            $this->parentCompany,
+            $locationList
+        );
+    }
+
+    public function toString(): string
+    {
+        $locationList = "";
+        foreach($this->restaurantLocation as $restaurantLocation){
+            $locationList .= $restaurantLocation->toHTML();
+        }
+        return sprintf(
+            "CompanyName: %s, Locations: %s",
             $this->parentCompany,
             $locationList
         );
