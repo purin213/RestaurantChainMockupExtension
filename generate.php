@@ -20,15 +20,21 @@
 
         <label for="employees">Total Chain Employees</label>
         <input type="number" name="employees" min="1" max="100" value="5">
-        
-        <label for="salary">Salary Range</label>
-        <input type="number" name="salary" min="1" max="999999" value="5">
+
+        <label for="salaryMin">Minimum Salary</label>
+        <input type="number" name="salaryMin" min="1" max="999999" value="20000">
+
+        <label for="salaryMax">Maximum Salary</label>
+        <input type="number" name="salaryMax" min="1" max="999999" value="120000">
 
         <label for="locationCount">Number Of Locations</label>
-        <input type="number" name="locationCount" min="1" max="999999" value="5">
+        <input type="number" name="locationCount" min="1" max="999999" value="1">
 
-        <label for="postNumberRange">Post Number Range</label>
-        <input type="number" name="postNumberRange" min="11111" max="99999" value="5">
+        <label for="postNumberMin">Post Number Minimum</label>
+        <input type="number" name="postNumberMin" min="11111" max="99999" value="90001">
+
+        <label for="postNumberMax">Post Number Maximum</label>
+        <input type="number" name="postNumberMax" min="11111" max="99999" value="90899">
 
         <button type="submit">Generate</button>
     </form>

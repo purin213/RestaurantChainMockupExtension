@@ -14,9 +14,6 @@ $max = $_GET['max'] ?? 10;
 // パラメータが整数であることを確認
 $min = (int)$min;
 $max = (int)$max;
-
-// ユーザーの生成
-$restaurantChains = RandomGenerator::restaurantChains();
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +28,37 @@ $restaurantChains = RandomGenerator::restaurantChains();
     <link rel ="stylesheet" href="vendor/twbs/bootstrap/dist/css/bootstrap.css">
 </head>
 <body class="p-5">
-    <h1>Restaurant Profiles</h1>
-        <?php foreach($restaurantChains as $restaurantChain): ?>
-            <div>
-                <?php echo $restaurantChain->toHTML(); ?>
-            </div>
-        <?php endforeach; ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+ <form action="download.php" method="post">
+        <label for="count">Number of Users:</label>
+        <input type="number" id="count" name="count" min="1" max="100" value="5">
+
+        <label for="format">Download Format:</label>
+        <select id="format" name="format">
+            <option value="html">HTML</option>
+            <option value="markdown">Markdown</option>
+            <option value="json">JSON</option>
+            <option value="txt">Text</option>
+        </select>
+
+        <label for="employees">Total Chain Employees</label>
+        <input type="number" name="employees" min="1" max="100" value="5">
+        
+        <label for="salaryMin">Minimum Salary</label>
+        <input type="number" name="salaryMin" min="1" max="999999" value="5">
+
+        <label for="salaryMax">Maximum Salary</label>
+        <input type="number" name="salaryMax" min="1" max="999999" value="5">
+
+        <label for="locationCount">Number Of Locations</label>
+        <input type="number" name="locationCount" min="1" max="999999" value="5">
+
+        <label for="postNumberMin">Post Number Minimum</label>
+        <input type="number" name="postNumberMin" min="11111" max="99999" value="5">
+
+        <label for="postNumberMax">Post Number Maximum</label>
+        <input type="number" name="postNumberMax" min="11111" max="99999" value="5">
+
+        <button type="submit">Generate</button>
+    </form>
 </body>
 </html>
